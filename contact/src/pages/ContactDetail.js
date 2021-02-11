@@ -11,10 +11,8 @@ export default function ContactDetail(props) {
     const idNum = props.match.params.id
     const[activeUser, setActiveUser] = useState(contactJSON.find(user => user.id == idNum))
    console.log(activeUser)
-    return <ul>
-        <li> 
-        <Link to='/'>Back</Link>
-        </li>
+    return <div> <h3> <Link to='/'> back </Link> </h3>
+        <ul>
         <li>
         {activeUser.name.first} {activeUser.name.last}
         </li>
@@ -27,6 +25,6 @@ export default function ContactDetail(props) {
         <li> 
         {activeUser.location.city}{', '}{activeUser.location.state}
         </li>
-
         </ul>
+        </div>
 }
