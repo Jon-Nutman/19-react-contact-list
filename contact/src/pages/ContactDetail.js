@@ -10,7 +10,14 @@ import {
 export default function ContactDetail(props) {
     const idNum = props.match.params.id
     const[activeUser, setActiveUser] = useState(contactJSON.find(user => user.id == idNum))
-   console.log(activeUser)
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+      let firstName = capitalizeFirstLetter(activeUser.name.first)
+      let lastName = capitalizeFirstLetter(activeUser.name.last)
+      let city = capitalizeFirstLetter(activeUser.location.city)
+      let state = capitalizeFirstLetter(activeUser.location.state)
+
     return <div>
          <h3 
          className="contact-details-header" >  
@@ -21,7 +28,7 @@ export default function ContactDetail(props) {
          </h3>
         <ul>
         <li>
-        {activeUser.name.first} {activeUser.name.last}
+        {firstName} {lastName}
         </li>
         <li> 
         {activeUser.email}
@@ -30,7 +37,7 @@ export default function ContactDetail(props) {
         {activeUser.cell}
         </li>
         <li> 
-        {activeUser.location.city}{', '}{activeUser.location.state}
+        {city}{', '}{state}
         </li>
         </ul>
         </div>
