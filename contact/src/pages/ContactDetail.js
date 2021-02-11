@@ -11,7 +11,14 @@ export default function ContactDetail(props) {
     const idNum = props.match.params.id
     const[activeUser, setActiveUser] = useState(contactJSON.find(user => user.id == idNum))
    console.log(activeUser)
-    return <div> <h3> <Link to='/'> back </Link> </h3>
+    return <div>
+         <h3 
+         className="contact-details-header" >  
+         <Link 
+         className='contact-details-back' to='/'> Back 
+         </Link> 
+         <img className='contact-picture-header' src={activeUser.picture.large} alt="Logo" />
+         </h3>
         <ul>
         <li>
         {activeUser.name.first} {activeUser.name.last}

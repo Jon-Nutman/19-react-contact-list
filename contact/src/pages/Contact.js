@@ -14,7 +14,12 @@ const [contacts, setContacts] = useState(contactJSON)
         <h3 id="contacts-list-header">My Peeps</h3>
         {contacts.map(contact => {
 
-            return <Link className='contact-list-links' to={`/detail/${contact.id}`}> {contact.name.first}{contact.name.last} </Link>
+            return <Link 
+            className='contact-list-links' 
+            to={`/detail/${contact.id}`}>
+                <img className='contact-picture-thumbnail' src={contact.picture.thumbnail} alt="Logo" />
+                 <span className='contact-name' > {contact.name.first} {contact.name.last} </span> 
+                 </Link>
             
         })}
     </ul>
