@@ -21,9 +21,11 @@ export default function ContactDetail(props) {
     return <div>
          <h3 
          className="contact-details-header" >  
-         <Link 
+         <div>
+             <Link 
          className='contact-details-back' to='/'> Back 
-         </Link> 
+            </Link> 
+         </div>
          <img className='contact-picture-header' src={activeUser.picture.large} alt="Logo" />
          </h3>
         <ul>
