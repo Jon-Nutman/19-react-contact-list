@@ -2,3 +2,29 @@
   margin: 0;
   padding: 0;
 }
+
+#contacts-list{
+  display: flex;
+  flex-direction: column;
+}
+
+#contacts-list-header{
+  color: white;
+  padding: 15px;
+  background-color: #8EBA4F;
+  border-bottom: solid 2px #7AA33E;
+}
+
+.contact-list-links{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-bottom: 15px;
+  color: black;
+  text-decoration: none;
+  border-bottom: solid 1px#E4E5E5;
+}
+.contact-list-links:visited{
+  color: black;
+  text-decoration: none;
+}

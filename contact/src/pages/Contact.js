@@ -10,10 +10,11 @@ import {
 export default function Contact() {
 const [contacts, setContacts] = useState(contactJSON)
     return <div>
-    <ul>
+    <ul id="contacts-list">
+        <h3 id="contacts-list-header">My Peeps</h3>
         {contacts.map(contact => {
 
-            return <Link to={`/detail/${contact.id}`}> {contact.name.first}{contact.name.last} </Link>
+            return <Link className='contact-list-links' to={`/detail/${contact.id}`}> {contact.name.first}{contact.name.last} </Link>
             
         })}
     </ul>
